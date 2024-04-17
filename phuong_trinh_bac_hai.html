@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Giải phương trình bậc hai: aX2 + bX + c = 0 (a#0)</h2>
+<input type="number" id="a" placeholder="Nhập a"><br><br>
+<input type="number" id="b" placeholder="Nhập b"><br><br>
+<input type="number" id="c" placeholder="Nhập c"><br><br>
+<button onclick="giaipt()">Giải phương trình</button>
+<p id="kq0"></p>
+<p id="kq"></p>
+<h4 id="kq1"></h4>
+<h4 id="kq2"></h4>
+<body>
+<script>
+    function giaipt(){
+        let a =+ document.getElementById('a').value;
+        let b =+ document.getElementById('b').value;
+        let c =+ document.getElementById('c').value;
+        document.getElementById('kq0').innerHTML = a +'X2+'+ b +'X+'+c + ' = 0';
+        let delta = b*b-4*a*c;
+        let candelta = Math.sqrt(delta);
+        if (a!=0){
+            if (delta<0){
+                document.getElementById('kq').innerHTML = "Phương trình vô nghiệm";
+            }
+            else if (delta == 0){
+                document.getElementById('kq').innerHTML = "Phương trình có nghiệm kép X1 = X2 =  "+(-(b)/(2*a));
+            }
+            else {
+                document.getElementById('kq').innerHTML = "Phương trình có 2 nghiệm phân biệt"+'<br><br>'
+                document.getElementById('kq1').innerHTML = "X1 = "+ ((-b+candelta)/(2*a));
+                document.getElementById('kq2').innerHTML = "X2 = "+ ((-b-candelta)/(2*a));
+            }
+        }
+        else {
+            document.getElementById('kq').innerHTML = "a = 0 không phải phương trình bậc hai";
+        }
+    }
+</script>
+</body>
+</html>

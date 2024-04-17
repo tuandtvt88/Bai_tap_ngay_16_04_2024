@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Chương trình kiểm tra ba cạnh của một tam giác</h2>
+<input type="number" id="a" placeholder="Nhập vào cạnh a"><br><br>
+<input type="number" id="b" placeholder="Nhập vào cạnh b"><br><br>
+<input type="number" id="c" placeholder="Nhập vào cạnh c"><br><br>
+<button onclick="kiemtra()">Kiểm tra</button>
+<p id="kq"></p>
+<script>
+    function kiemtra(){
+        let a =+ document.getElementById('a').value;
+        let b =+ document.getElementById('b').value;
+        let c =+ document.getElementById('c').value;
+        if (a > 0 && b > 0 && c > 0 && a + b > c && b + c > a && a + c > b) {
+            document.getElementById('kq').innerHTML = 'Là 3 cạnh của tam giác';
+        } else {
+            document.getElementById('kq').innerHTML = 'Không phải 3 cạnh của tam giác';
+        }
+    }
+</script>
+</body>
+</html>

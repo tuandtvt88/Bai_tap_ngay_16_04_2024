@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Chương trình kiểm tra tuổi một người</h2>
+<input type="number" id="a" placeholder=" Nhập vào tuổi một người"><br><br>
+<button onclick="tuoi()">Kiểm tra</button>
+<p id="kq"></p>
+<body>
+<script>
+    function tuoi(){
+        let a = document.getElementById('a').value;
+        if (a>0 && a <120){
+            document.getElementById('kq').innerHTML = "Là tuổi của người";
+        }
+        else {
+            document.getElementById('kq').innerHTML = "Không phải tuổi của người";
+        }
+    }
+</script>
+</body>
+</html>
